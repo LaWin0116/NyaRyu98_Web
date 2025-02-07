@@ -8,6 +8,12 @@
   --sub-color-3: #d6fe1e;
 
 }
+/* * {
+NOTE: 여기에 전체 설정 추가
+} */
+body {
+  background: #fffedd;
+}
 /* 이름, 나이등 정보 */
 .profile {
   position: relative;
@@ -55,4 +61,14 @@
   background: linear-gradient(180deg, var(--main-color-2), var(--main-color-1) 75%);
   width: 25rem;
   height: 25rem;
+}
+.link img {
+  width: 75%;
+  height: auto;
+
+}
+.youtube, .discord, .nyagit {
+  width: 13rem;
+  height: 13rem;
+  text-align: center;
 }
