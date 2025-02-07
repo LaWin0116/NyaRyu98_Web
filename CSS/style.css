@@ -67,8 +67,11 @@ body {
   height: auto;
 
 }
-.youtube, .discord, .nyagit {
+.youtube, .discord, .nyagit, .CHZZK, .ruliweb, .Pixiv {
   width: 13rem;
   height: 13rem;
   text-align: center;
+}
+.Pixiv strong {
+  color: red;
 }
