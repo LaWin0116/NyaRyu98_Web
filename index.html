@@ -1,16 +1,24 @@
 <!DOCTYPE html> <!-- NOTE: 각 줄마다 일기를 쓰자! -->
 <html lang="ko"> <!-- 25.2.7 오늘은 거의 한시간 가량 기다렸지만 보스가 방송을 안 키셨다. 너무 걱정된다. 추가:08:50에 키셨다. 늦잠잤다고 한다. 다행이다. -->
-<head> <!-- 25.2.8 -->
+<head> <!-- 25.2.8 한자시험을 봤는데 쫌 못 본거 같다. 뭐, 이미 끝났으니 머릿속에서 잊고 보스 유튭이나 보자. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS/style.css">
   <title>냐류98-메인</title>
+  <link rel="icon" href="images/logo/벨트 게이트웨이.png">
 </head>
 <body>
+  <!-- 헤더부분은 모두 공통임 -->
   <header>
-    <h1>냐류98</h1>
-    <!-- 메뉴 -->
-    
+    <div class="head-menu">
+      <div class="logo">
+        <img src="images/nyaryu98_profile.png" alt="냐류98">
+        <h1>냐류98</h1>
+      </div>
+      <div class="menu">
+
+      </div>
+    </div>
   </header>
   <!-- 간단한 프로필 -->
   <main>
@@ -55,37 +63,54 @@
         </tr> <!-- 보스 생년월일: 1997/02/27 -->
       </table> <!-- 보스는 색맹(정확힌 색감 이상자가 맞는 표현)이다. -->
     </section>
-    <section>
+    <section class="site-link">
       <h2>관련 사이트 바로가기</h2>
-      <table  class="link">
+      <table  class="links">
         <td class="youtube">
-          <img src="images/link_image/유튜브.png" alt="유튜브 바로가기" onclick="location.href = 'https://www.youtube.com/@%EB%83%90%EB%A5%9898'">
-          <p onclick="location.href = 'https://www.youtube.com/@%EB%83%90%EB%A5%9898'"><b>유튜브 바로가기</b></p>
+          <a href="https://www.youtube.com/@%EB%83%90%EB%A5%9898">
+            <img src="images/link_image/유튜브.png" alt="유튜브 바로가기">
+            <p><b>유튜브 바로가기</b></p>
+          </a>
         </td>
         <td class="discord">
-          <img src="images/link_image/디스코드.png" alt="디스코드 바로가기" onclick="location.href = 'https://discord.gg/ZhXeFwuWcu'">
-          <p onclick="location.href = 'https://discord.gg/ZhXeFwuWcu'"><b>디스코드 바로가기</b></p>
+          <a href="https://discord.gg/ZhXeFwuWcu">
+            <img src="images/link_image/디스코드.png" alt="디스코드 바로가기">
+            <p><b>디스코드 바로가기</b></p>
+          </a>
         </td>
         <td class="nyagit">
-          <img src="images/logo/벨트단 코퍼레이션.gif" alt="냐지트 바로가기" onclick="location.href = 'https://cafe.naver.com/teambelt'">
-          <p onclick="location.href = 'https://cafe.naver.com/teambelt'"><b>냐지트 바로가기</b></p>
+          <a href="https://cafe.naver.com/teambelt">
+            <img src="images/logo/벨트단 코퍼레이션.gif" alt="냐지트 바로가기">
+            <p><b>냐지트 바로가기</b></p>
+          </a>
         </td>
         <td class="CHZZK">
-          <img src="images/logo/CHZZK_logo.png" alt="치지직 바로가기" onclick="location.href = 'https://chzzk.naver.com/48d54fc26fecb87b2f6125a08f484322'">
-          <p onclick="location.href = 'https://chzzk.naver.com/48d54fc26fecb87b2f6125a08f484322'"><b>치지직 바로가기</b></p>
+          <a href="https://chzzk.naver.com/48d54fc26fecb87b2f6125a08f484322">
+            <img src="images/logo/CHZZK_logo.png" alt="치지직 바로가기">
+            <p><b>치지직 바로가기</b></p>
+          </a>
         </td>
         <td class="ruliweb">
-          <img src="images/logo/루리웹.png" alt="루리웹 바로가기" onclick="location.href = 'https://bbs.ruliweb.com/userboard/board/700425'">
-          <p onclick="location.href = 'https://bbs.ruliweb.com/userboard/board/700425'"><b>루리웹 바로가기</b></p>
+          <a href="https://bbs.ruliweb.com/userboard/board/700425">
+            <img src="images/logo/루리웹.png" alt="루리웹 바로가기">
+            <p><b>루리웹 바로가기</b></p>
+          </a>
         </td>
         <td class="Pixiv">
-          <img src="images/logo/pixiv.png" alt="픽시브 바로가기" onclick="location.href = 'https://www.pixiv.net/users/15698708'">
-          <p onclick="location.href = 'https://www.pixiv.net/users/15698708'" style="margin: 0;"><b>픽시브 바로가기</b></p>
-          <p class="age-warning" style="margin: 0;"><strong>*주의: 야짤 있음*</strong></p>
+          <a href="https://www.pixiv.net/users/15698708">
+            <img src="images/logo/pixiv.png" alt="픽시브 바로가기">
+            <p style="margin: 0;"><b>픽시브 바로가기</b></p>
+          </a>
+          <p class="age-warning"><strong>*주의: 야짤 있음*</strong></p>
+        </td>
+        <td class="youtube-RGBs">
+          <a href="https://www.youtube.com/@RGBs%ED%95%B4%EA%B2%B0%EC%82%AC">
+            <img src="images/RGB's.png" alt="RGB's 유튜브 바로가기">
+            <p style="margin: 0;"><b>RGB's 유튜브 바로가기</b></p>
+          </a>
         </td>
       </table>
-    </section>
-    <!-- 2.7. 보스 2시간 30분 지각! 보스가 벌칙을 쉬운거로 하려 하자 마네쟈 왈: 2시간이상 늦었으면서 쉬운걸 찾을려고해요?? ...평소 보스에게 샇인게 많으신가보다.. -->
+    </section><!-- 2.7. 보스 2시간 30분 지각! 보스가 벌칙을 쉬운거로 하려 하자 마네쟈 왈: 2시간이상 늦었으면서 쉬운걸 찾을려고해요?? ...평소 보스에게 샇인게 많으신가보다.. -->
   </main>
   <footer>
     <div class="ppul-gul">
@@ -94,14 +119,14 @@
         <p>보스는 반성을 안하는 뻔뻔한 고양이다.</p>
         <p>그래도 보스가 좋다.</p>
         <p>보스가 그랬지, 자신의 집에 오면 뭐든 해 주겠다고... 당장 출동한닷!</p>
-        <p style="color: gray; text-decoration: line-through;">하앙..♡ 하앙...♡ 보스... 나.. 아레가 이상헤으응♡</p>
+        <p style="color: #80808040; text-decoration: line-through;">하앙..♡ 하앙...♡ 보스... 나.. 아레가 이상헤으응♡</p>
       </div>
       <div class="ppul-gul-TMI">
         <p>으ㅡ아--- 왜 내가 프로그래머가 되겠다고 했을까...? 코딩 개 힘드네...</p>
         <p>이미지들 구하는거 너무 힘들었어....</p>
-        <p>나는 보스를 알기 전에도 오토코노코를 좋아했다.</p> <!-- 아... 그그... 뭐더라...? 그... 무슨 내용을 쓰려 했지...? -->
-        <p style="color: gray; text-decoration: line-through;">아----- 섹▢ 하고싶다-------</p>
-        <p style="color: gray; text-decoration: line-through;">시안이는 F컵~!</p>
+        <p>나는 오토코노코가 너무 좋아~!</p> <!-- 아... 그그... 뭐더라...? 그... 무슨 내용을 쓰려 했지...? -->
+        <p style="color: #80808040; text-decoration: line-through;">아----- 섹▢ 하고싶다-------</p>
+        <p style="color: #80808040; text-decoration: line-through;">시안이는 F컵~!</p>
       </div>
       <div class="introduce">
         <p>안녕하세요? 이 사이트 제작자 라윈 이라고 합니다.</p>
