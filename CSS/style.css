@@ -39,6 +39,15 @@ header {
 .main-ico a {
   text-decoration: none;
 }
+.menu {
+  width: 85%; /* 1027px 까지 적당*/
+  margin: 0;
+}
+.menu a {
+  border: 2px solid var(--main-color-3);
+  padding: 20px 40px;
+  margin: 7%;
+}
 
 /* 메인-이름, 나이등 정보 */
 .profile {
