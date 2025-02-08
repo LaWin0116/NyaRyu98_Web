@@ -15,14 +15,39 @@ NOTE: 여기에 전체 설정 추가
 } */
 body {
   background: var(--bg-color-light);
+  margin: 0;
 }
+a:link {
+  color: var(--link-text-color);
+}
+a:visited {
+  color: var(--visited-text-color);
+}
+
 /* 헤더 영역 */
+header {
+  padding-bottom: 12px;
+  margin: 0;
+}
+.head-menu {
+  background: linear-gradient(135deg, var(--main-color-1), var(--main-color-2));
+}
+.main-ico img {
+  width: 3rem;
+  height: auto;
+}
+.main-ico a {
+  text-decoration: none;
+}
 
 /* 메인-이름, 나이등 정보 */
 .profile {
   position: relative;
-  left: 33rem;
-
+  width: 25.6rem;
+  height: auto;
+  left: 36.52%;
+  display: flex;
+  justify-content: space-between;
 }
 .info, .info th, .info td {
   border: 2px solid var(--main-color-3);
@@ -66,7 +91,19 @@ body {
   width: 25rem;
   height: 25rem;
 }
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .profile {
+    left: 25%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .profile {
+    left: 2%;
+  }
+}
+
 /* 매인 내용 */
+
 
 /* 바로가기 */
 .links img {
@@ -77,13 +114,6 @@ body {
   width: 13rem;
   height: 13rem;
   text-align: center;
-}
-.links a:link {
-  color: var(--link-text-color);
-}
-.links a:visited {
-  color: var(--visited-text-color);
-  text-decoration: none;
 }
 .age-warning {
   color: red;
