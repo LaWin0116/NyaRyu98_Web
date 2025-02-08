@@ -40,7 +40,7 @@ header {
   text-decoration: none;
 }
 .menu {
-  width: 85%; /* 1027px 까지 적당*/
+  width: 85%;
   margin: 0;
 }
 .menu a {
@@ -100,14 +100,25 @@ header {
   width: 25rem;
   height: 25rem;
 }
+@media screen and (min-width: 1024px) and (max-width: 1027px) {
+  .menu {
+    
+  }
+}
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .profile {
     left: 25%;
+  }
+  .menu {
+    
   }
 }
 @media screen and (max-width: 767px) {
   .profile {
     left: 2%;
+  }
+  .menu {
+    
   }
 }
 
