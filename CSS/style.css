@@ -16,6 +16,7 @@ NOTE: 여기에 전체 설정 추가
 body {
   background: var(--bg-color-light);
   margin: 0;
+  display: grid;
 }
 a:link {
   color: var(--link-text-color);
@@ -38,15 +39,34 @@ header {
 }
 .main-ico a {
   text-decoration: none;
+  color: #fff;
 }
 .menu {
   width: 85%;
   margin: 0;
 }
-.menu a {
-  border: 2px solid var(--main-color-3);
-  padding: 20px 40px;
+.button {
+  border: 1px solid #fff;
+  padding: 15px 30px;
   margin: 7%;
+  font-size: x-large;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #fff;
+  outline: 2px solid #fff;  
+  position: relative;
+  overflow: hidden;
+  transition: color 1s;
+}
+.button::before {
+  background-color: #ffffff;
+}
+.button:hover {
+  
+}
+.button:hover::before {
+  
 }
 
 /* 메인-이름, 나이등 정보 */
@@ -100,27 +120,6 @@ header {
   width: 25rem;
   height: 25rem;
 }
-@media screen and (min-width: 1024px) and (max-width: 1027px) {
-  .menu {
-    
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .profile {
-    left: 25%;
-  }
-  .menu {
-    
-  }
-}
-@media screen and (max-width: 767px) {
-  .profile {
-    left: 2%;
-  }
-  .menu {
-    
-  }
-}
 
 /* 매인 내용 */
 
@@ -159,4 +158,57 @@ footer {
 }
 .introduce {
   text-align: right;
+}
+
+/* 미디어 쿼리 */
+/* 난 반응형으로 만들기를 포기했다. */
+@media screen and (min-width: 1024px) and (max-width: 1027px) {
+  .menu {
+    width: 84%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .profile {
+    left: 25%;
+  }
+  .menu {
+    width: 83%;
+  }
+}
+@media screen and (min-width: 702px) and (max-width: 769px) {
+  .profile {
+    left: 24%;
+  }
+  .menu {
+    width: 78%;
+  }
+  .button {
+    margin: 4%;
+  }
+}
+/* 모바일 호환은 개나줘버려라 TTㅣ발 */
+@media screen and (max-width: 420px) {
+  .text-a {
+    width: 50px;
+  }
+  .image {
+    width: 49px;
+  }
+  .profile {
+    left: 20%;
+  }
+  .menu {
+    width: 50%;
+  }
+  .button {
+    padding: 5px 10px;
+    margin: 0.25%;
+    font-size: medium;
+    font-weight: normal;
+  }
+  .main-ico h1 {
+    font-size: large;
+    font-weight: 500;
+    width: 65px;
+  }
 }
