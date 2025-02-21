@@ -135,7 +135,7 @@ header {
     margin: auto 4%;
   }
 }
-@media screen and (max-width: 420px) {
+/* @media screen and (max-width: 420px) {
   .text-a {
     width: 50px;
   }
@@ -156,4 +156,4 @@ header {
     font-weight: 500;
     width: 65px;
   }
-}
+} */
