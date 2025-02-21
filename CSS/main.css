@@ -13,6 +13,10 @@
 /* * {
 NOTE: 여기에 전체 설정 추가
 } */
+.sect > h2, .sect > p {
+  text-align: center;
+  font-size: xx-large;
+}
 
 /* 메인-이름, 나이등 정보 */
 .profile {
@@ -67,7 +71,10 @@ NOTE: 여기에 전체 설정 추가
 }
 
 /* 매인 내용 */
-
+.channel-introduce > p {
+  font-size: x-large;
+  font-weight: 550;
+}
 
 /* 바로가기 */
 .links img {
