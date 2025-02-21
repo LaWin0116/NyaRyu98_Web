@@ -86,6 +86,34 @@ header {
   width: 175%;
 }
 
+.text-a > a {
+  display: inline-flex;
+  color: #fff;
+  background-color: #0000;
+  position: relative;
+  overflow: hidden;
+  transition: color 1s;
+  z-index: 1;
+}
+.text-a > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 0%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+  transform: skewX(145deg);
+  transition: width 1s;
+}
+.text-a > a:hover {
+  color: var(--main-color-2);
+}
+.text-a > a:hover::before {
+  width: 185%;
+}
+
 /* 미디어 쿼리 */
 /* 난 반응형으로 만들기를 포기했다. */
 @media screen and (min-width: 1024px) and (max-width: 1027px) {
