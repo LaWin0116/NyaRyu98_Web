@@ -1,3 +1,4 @@
+/* TODO: root.css 로 옮기기 ---------- */
 :root {
   /* main-color-1 ~ main-color-2 사이의 색상 모두 사용 가능 */
   --main-color-1: #fef63d;
@@ -31,7 +32,7 @@ header {
   margin: 0;
 }
 .head-menu-div {
-  background: linear-gradient(135deg, var(--main-color-1), var(--main-color-2));
+  background: linear-gradient(135deg, var(--main-color-2), var(--main-color-1));
 }
 .main-ico img {
   width: 3em;
@@ -46,7 +47,6 @@ header {
   margin: 0;
 }
 .button {
-  border: 1px solid #fff;
   padding: 15px 30px;
   margin: 7%;
   font-size: x-large;
@@ -54,10 +54,6 @@ header {
   text-decoration: none;
   letter-spacing: 2px;
   color: #fff;
-  outline: 2px solid #fff;  
-  position: relative;
-  overflow: hidden;
-  transition: color 1s;
 }
 .button::before {
   background-color: #ffffff;
@@ -68,6 +64,11 @@ header {
 .button:hover::before {
   
 }
+/* ---------- root.css 로 옮기기 ---------- */
+
+/* * {
+NOTE: 여기에 전체 설정 추가
+} */
 
 /* 메인-이름, 나이등 정보 */
 .profile {
