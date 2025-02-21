@@ -1,10 +1,94 @@
-/* TODO: main.css에서 모든 페이지에 공통으로 적용될 부분 옮기기 */
+:root {
+  /* main-color-1 ~ main-color-2 사이의 색상 모두 사용 가능 */
+  --main-color-1: #fef63d;
+  --main-color-2: #fec54a;
+  --main-color-3: #2f1520;
+  --sub-color-1: #25fef7;
+  --sub-color-2: #d81936;
+  --sub-color-3: #d6fe1e;
+  --bg-color-light:#fffeed;
+  --link-text-color: #921052;
+  --visited-text-color: #350a1f;
+}
+/* * {
+NOTE: 여기에 전체 설정 추가
+} */
+body {
+  background: var(--bg-color-light);
+  margin: 0;
+  /* display: grid; */
+  display:flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+a:link {
+  color: var(--link-text-color);
+}
+a:visited {
+  color: var(--visited-text-color);
+}
 
+/* 헤더 영역 */
+header {
+  padding-bottom: 12px;
+  margin: 0;
+}
+.head-menu-div {
+  background: linear-gradient(135deg, var(--main-color-2), var(--main-color-1));
+  position: relative;
+}
+.main-ico img {
+  width: 3em;
+  height: 3em;
+}
+.main-ico a {
+  text-decoration: none;
+  color: #fff;
+}
+.menu {
+  width: 85%;
+  margin: 0;
+}
+.button {
+  display: inline-flex;
+  border: 3px solid #fff;
+  padding: 15px 30px;
+  margin: auto 7%;
+  font-size: x-large;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #fff;
+  background-color: #0000;
+  position: relative;
+  overflow: hidden;
+  transition: color 1s;
+  z-index: 1;
 
+}
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 0%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+  transform: skewX(145deg);
+  transition: width 1s;
+}
+.button:hover {
+  color: var(--main-color-2);
+}
+.button:hover::before {
+  width: 175%;
+}
 
 /* 미디어 쿼리 */
 /* 난 반응형으로 만들기를 포기했다. */
-/* @media screen and (min-width: 1024px) and (max-width: 1027px) {
+@media screen and (min-width: 1024px) and (max-width: 1027px) {
   .menu {
     width: 84%;
   }
@@ -19,11 +103,11 @@
     width: 78%;
   }
   .button {
-    margin: 4%;
+    margin: auto 4%;
   }
-} */
+}
 /* 모바일 호환은 개나줘버려라 TTㅣ발 */
-/* @media screen and (max-width: 420px) {
+@media screen and (max-width: 420px) {
   .text-a {
     width: 50px;
   }
@@ -35,7 +119,7 @@
   }
   .button {
     padding: 5px 10px;
-    margin: 0.25%;
+    margin: auto 0.25%;
     font-size: medium;
     font-weight: normal;
   }
@@ -44,4 +128,4 @@
     font-weight: 500;
     width: 65px;
   }
-} */
+}
