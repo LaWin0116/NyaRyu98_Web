@@ -116,6 +116,7 @@ header {
 
 /* 미디어 쿼리 */
 /* 난 반응형으로 만들기를 포기했다. */
+/* 모바일 호환은 개나줘버려라 TTㅣ발 */
 @media screen and (min-width: 1024px) and (max-width: 1027px) {
   .menu {
     width: 84%;
@@ -134,7 +135,6 @@ header {
     margin: auto 4%;
   }
 }
-/* 모바일 호환은 개나줘버려라 TTㅣ발 */
 @media screen and (max-width: 420px) {
   .text-a {
     width: 50px;
