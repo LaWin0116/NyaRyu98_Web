@@ -114,53 +114,19 @@ footer {
 
 /* 미디어 쿼리 */
 /* 난 반응형으로 만들기를 포기했다. */
-@media screen and (min-width: 1024px) and (max-width: 1027px) {
-  .menu {
-    width: 84%;
-  }
-}
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .profile {
     left: 25%;
-  }
-  .menu {
-    width: 83%;
   }
 }
 @media screen and (min-width: 702px) and (max-width: 769px) {
   .profile {
     left: 24%;
   }
-  .menu {
-    width: 78%;
-  }
-  .button {
-    margin: 4%;
-  }
 }
 /* 모바일 호환은 개나줘버려라 TTㅣ발 */
 @media screen and (max-width: 420px) {
-  .text-a {
-    width: 50px;
-  }
-  .image {
-    width: 49px;
-  }
   .profile {
     left: 20%;
-  }
-  .menu {
-    width: 50%;
-  }
-  .button {
-    padding: 5px 10px;
-    margin: 0.25%;
-    font-size: medium;
-    font-weight: normal;
-  }
-  .main-ico h1 {
-    font-size: large;
-    font-weight: 500;
-    width: 65px;
   }
 }
