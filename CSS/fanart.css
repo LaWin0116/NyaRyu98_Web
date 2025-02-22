@@ -65,6 +65,21 @@ body.lightroom-active * {
   cursor: default !important;
 }
 
+/* 이미지 설명 스타일 */
+#lightboxCaption {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0);
+  padding: 10px 15px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
 /* 바로가기 */
 .link {
   display: flex;
