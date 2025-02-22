@@ -1,0 +1,37 @@
+:root {
+  /* main-color-1 ~ main-color-2 사이의 색상 모두 사용 가능 */
+  --main-color-1: #fef63d;
+  --main-color-2: #fec54a;
+  --main-color-3: #2f1520;
+  --sub-color-1: #25fef7;
+  --sub-color-2: #d81936;
+  --sub-color-3: #d6fe1e;
+  --bg-color-light:#fffeed;
+  --link-text-color: #921052;
+  --visited-text-color: #350a1f;
+}
+section > h2, section > p {
+  text-align: center;
+  font-size: xx-large;
+}
+
+/* 팬아트 */
+
+/* 바로가기 */
+.fa-link {
+  text-align: center;
+}
+.link td {
+  width: 12rem;
+  height: 12rem;
+  text-align: center;
+}
+.link img {
+  width: 75%;
+  height: auto;
+  
+}
+.age-warning {
+  color: red;
+  margin: 0;
+}
