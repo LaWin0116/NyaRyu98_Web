@@ -18,8 +18,10 @@ section > h2, section > p {
 /* 팬아트 */
 
 /* 바로가기 */
-.fa-link {
-  text-align: center;
+.link {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 .link td {
   width: 12rem;
@@ -29,7 +31,8 @@ section > h2, section > p {
 .link img {
   width: 75%;
   height: auto;
-  
+  display: block;
+  margin: 0 auto;
 }
 .age-warning {
   color: red;
