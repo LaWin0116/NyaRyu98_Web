@@ -58,7 +58,6 @@ body.lightroom-active #lightbox img {
 body.lightroom-active * {
   cursor: default !important;
 }
-
 /* 이미지 설명 스타일 */
 #lightboxCaption {
   position: absolute;
