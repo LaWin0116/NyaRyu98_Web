@@ -1,68 +1,51 @@
-document.addEventListener("DOMContentLoaded", async () => {
-    const API_KEY = "AIzaSyCMzZWqzt6MINnIFh2xbXFrEGAzzb3mqbg";
-    const CHANNEL_ID = "UCsu6EA4DWm5nFGMkXHxt2vw";
-    const MAX_RESULTS = 1;
+async function fetchLatestLongFormVideo(channelId) {
+    const proxyUrls = [
+        "https://api.allorigins.win/get?url=",
+        "https://thingproxy.freeboard.io/fetch/"
+    ];
+    const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
 
-    async function fetchLatestVideoId() {
-        const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=id&order=date&maxResults=${MAX_RESULTS}&type=video&videoDuration=medium`;
-
+    let response, data;
+    for (let proxy of proxyUrls) {
         try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            const data = await response.json();
-
-            if (!data.items || data.items.length === 0) {
-                console.error("최신 영상을 찾을 수 없습니다.", data);
-                return null;
-            }
-
-            return data.items[0].id.videoId;  // 가장 최신 영상 ID 반환
+            response = await fetch(proxy + encodeURIComponent(rssUrl));
+            data = await response.json();
+            if (data.contents) break; // 성공하면 반복 종료
         } catch (error) {
-            console.error("최신 영상 ID를 가져오는 중 오류 발생:", error);
-            return null;
+            console.error(`프록시 ${proxy} 실패, 다른 프록시 시도 중...`);
         }
     }
 
-    async function fetchVideoDetails(videoId) {
-        if (!videoId) return;
+    if (!data || !data.contents) {
+        console.error("모든 프록시 요청이 실패했습니다.");
+        return;
+    }
 
-        const url = `https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&id=${videoId}&part=snippet,contentDetails,statistics`;
+    // XML 파싱
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(data.contents, "text/xml");
 
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            const data = await response.json();
+    // 최신 동영상 찾기
+    const entries = xml.querySelectorAll("entry");
+    for (let entry of entries) {
+        const title = entry.querySelector("title").textContent;
+        const link = entry.querySelector("link").getAttribute("href");
 
-            if (!data.items || data.items.length === 0) {
-                console.error("영상 정보를 찾을 수 없습니다.", data);
-                return;
-            }
-
-            const video = data.items[0];
-            const title = video.snippet.title;
-
-            const videoContainer = document.getElementById("video");
-            if (!videoContainer) {
-                console.error("ERROR: id='video' 요소를 찾을 수 없습니다.");
-                return;
-            }
-
-            videoContainer.innerHTML = `
-                <div>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
-                    <h3 style="text-align: center;">${title}</h3>
-                </div>
+        // 쇼츠 제외
+        if (!link.includes("/shorts/")) {
+            const videoId = new URL(link).searchParams.get("v");
+            document.getElementById("video").innerHTML = `
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+                <a href="${link}" style="text-decoration: none; cursor: default;">
+                    <h3>${title}</h3>
+                </a>
             `;
-
-        } catch (error) {
-            console.error("영상 정보를 가져오는 중 오류 발생:", error);
+            return;
         }
     }
 
-    const latestVideoId = await fetchLatestVideoId();
-    await fetchVideoDetails(latestVideoId);
-});
+    document.getElementById("video").innerHTML = `<p>롱폼 동영상을 찾을 수 없습니다.</p>`;
+}
+
+// 유튜브 채널 ID 설정 후 실행
+fetchLatestLongFormVideo("UCsu6EA4DWm5nFGMkXHxt2vw");
