@@ -94,3 +94,26 @@ body.lightroom-active * {
   color: red;
   margin: 0;
 }
+
+/* 푸터 영역 */
+footer {
+  padding: 60px 10%;
+  font-size: smaller;
+}
+.ppul-gul {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 30px;
+}
+.ppul-gul-left {
+  text-align: left;
+}
+.ppul-gul-center, .help {
+  text-align: center;
+}
+.ppul-gul-right {
+  text-align: right;
+}
+
+/* 반응형으로 만들기 */

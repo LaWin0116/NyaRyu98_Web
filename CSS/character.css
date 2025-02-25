@@ -1,0 +1,20 @@
+/* 푸터 영역 */
+footer {
+  padding: 60px 10%;
+  font-size: smaller;
+}
+.ppul-gul {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 30px;
+}
+.ppul-gul-boss {
+  text-align: left;
+}
+.ppul-gul-TMI, .help {
+  text-align: center;
+}
+.introduce {
+  text-align: right;
+}

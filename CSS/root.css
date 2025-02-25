@@ -28,6 +28,12 @@ a:link {
 a:visited {
   color: var(--visited-text-color);
 }
+a:hover {
+  color: var(--sub-color-1);
+}
+a:active {
+  color: var(--sub-color-3);
+}
 
 /* 헤더 영역 */
 header {
@@ -65,7 +71,6 @@ header {
   overflow: hidden;
   transition: color 1s;
   z-index: 1;
-
 }
 .button::before {
   content: "";
@@ -117,7 +122,7 @@ header {
 /* 미디어 쿼리 */
 /* 난 반응형으로 만들기를 포기했다. */
 /* 모바일 호환은 개나줘버려라 TTㅣ발 */
-@media screen and (min-width: 1024px) and (max-width: 1027px) {
+/* @media screen and (min-width: 1024px) and (max-width: 1027px) {
   .menu {
     width: 84%;
   }
@@ -135,7 +140,7 @@ header {
     margin: auto 4%;
   }
 }
-/* @media screen and (max-width: 420px) {
+@media screen and (max-width: 420px) {
   .text-a {
     width: 50px;
   }
@@ -157,3 +162,5 @@ header {
     width: 65px;
   }
 } */
+
+/* 반응형으로 만들기 */

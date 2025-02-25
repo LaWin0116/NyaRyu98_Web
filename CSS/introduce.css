@@ -11,7 +11,7 @@
   --visited-text-color: #350a1f;
 }
 section > h2{
-  text-align: center;
+  text-align: left;
   font-size: xx-large;
   margin-left: 1rem;
 }
@@ -20,12 +20,16 @@ section > h3 {
   margin-left: 2rem;
 }
 section > p {
+  font-size: large;
   font-weight: bolder;
   margin-left: 2.5rem;
 }
+hr {
+  visibility: hidden;
+}
 
 /* 파트 제목과 이미지 */
-.main-h2 {
+.main-h3 {
   display: inline-block;
   vertical-align: middle;
 }
@@ -36,8 +40,111 @@ section > p {
   height: 48px;
 }
 
+/* 냐아아아류 */
+.nya-top {
+  float: right;
+}
+.nya-mid {
+  position: relative;
+  float: right;
+  width: 122px;
+  height: 63px;
+  bottom: .2rem;
+}
+.nya-bot {
+  float: right;
+  width: 122px;
+  height: auto;
+}
+.mid-1 {
+  position: relative;
+  left: 43.63rem;
+  bottom: 2.1rem;
+}
+.mid-2 {
+  position: relative;
+  left: 51.25rem;
+  bottom: .3rem;
+}
+.mid-3 {
+  position: relative;
+  left: 45.5rem;
+  bottom: 4rem;
+}
+.m-3-b {
+  position: relative;
+  bottom: 4.2rem;
+}
+.m-3-c {
+  position: relative;
+  bottom: 5.5rem;
+}
+.mid-4 {
+  position: relative;
+  left: 53.13rem;
+  bottom: 2.5rem;
+}
+.mid-5 {
+  position: relative;
+  left: 60.75rem;
+  bottom: 2rem;
+}
+.nya-bot {
+  position: relative;
+  left: 68.391rem;
+  bottom: 1rem;
+}
+
 /* 내용 */
-.belt-food > img {
+.img-1 {
+  float: right;
+  margin-right: 30rem;
+}
+.img-2 {
+  float: right;
+  margin-right: 28rem;
+}
+.img-3 {
+  position: relative;
+  float: right;
+  margin-right: 48rem;
+  bottom: 2rem;
+}
+.img-4 {
+  position: relative;
+  float: right;
+  margin-right: 48rem;
+  bottom: 6.5rem;
+}
+.img-5 {
+  position: relative;
+  float: right;
+  margin-right: 48rem;
+  bottom: 6rem;
+}
+.img-6 {
+  position: relative;
+  float: right;
+  margin-right: 48rem;
+  bottom: 2.4rem;
+}
+.img-7 {
+  position: relative;
+  float: right;
+  margin-right: 48rem;
+  bottom: 7rem;
+}
+.img-8 {
+  position: relative;
+  float: right;
+  margin-right: 30rem;
+  bottom: 10rem;
+}
+.mini {
+  width: 150px;
+  height: auto;
+}
+.belt-rock {
   float: right;
   width: 512px;
   height: auto;
@@ -48,12 +155,76 @@ section > p {
   text-align: left;
   color: #666;
 }
+.small-text {
+  font-size: x-small;
+  text-decoration: line-through;
+  color: #666;
+}
+.another-belt > p {
+  font-size: larger;
+  margin-left: 2rem;
+}
+.video-link {
+  font-size: large;
+  font-weight: bolder;
+}
 /* .target > h2 {
   font-size: large;
 }
 .target > p {
   font-size: small;
 } */
+/* 이름, 나이등 정보 */
+.profile {
+  position: relative;
+  width: 25.6rem;
+  height: auto;
+  left: 36.52%;
+  display: flex;
+  justify-content: space-between;
+}
+.info, .info th, .info td {
+  border: 2px solid var(--main-color-3);
+  border-collapse: collapse;
+}
+.info th, .info td {
+  padding: 0.3rem 0.63rem;
+  font-size: large;
+  text-align: center;
+}
+.info th {
+  background: var(--main-color-2);
+  width: 9rem;
+  height: auto;
+}
+.info td {
+  width: 13.75rem;
+  height: auto;
+}
+.profile-info {
+  border: 2px solid var(--main-color-3);
+  background: var(--main-color-2);
+  background: linear-gradient(180deg, var(--main-color-2), var(--main-color-1) 75%);
+}
+.profile-info h2 {
+  background: var(--main-color-2);
+  margin: 0;
+}
+.profile-info p {
+  background: var(--main-color-1);
+  margin: 0;
+}
+.main-color mark {
+  background: var(--main-color-1);
+  border: 2px solid var(--main-color-3);
+  border-radius: 5px;
+}
+.profile-img{
+  background: var(--main-color-2);
+  background: linear-gradient(180deg, var(--main-color-2), var(--main-color-1) 75%);
+  width: 25rem;
+  height: 25rem;
+}
 
 /* 푸터 영역 */
 footer {
@@ -75,6 +246,5 @@ footer {
 .ppul-gul-right {
   text-align: right;
 }
-.small-text {
-  font-size: x-small;
-}
+
+/* 반응형으로 만들기 */

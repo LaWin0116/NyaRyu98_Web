@@ -76,6 +76,22 @@ NOTE: 여기에 전체 설정 추가
   font-weight: 550;
 }
 
+/* 최신 동영상 보기 */
+#video > a {
+  text-decoration: none;
+  cursor: default;
+}
+#video > a:hover {
+  color: var(--visited-text-color);
+}
+#video > a:active {
+  color: var(--link-text-color);
+}
+/* 추천 동영상 보기 */
+.youtube-rocommend > iframe {
+  padding: 1.25px;
+}
+
 /* 바로가기 */
 .links img {
   width: 75%;
@@ -114,7 +130,8 @@ footer {
 
 /* 미디어 쿼리 */
 /* 난 반응형으로 만들기를 포기했다. */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+/* 모바일 호환은 개나줘버려라 TTㅣ발 */
+/* @media screen and (min-width: 769px) and (max-width: 1024px) {
   .profile {
     left: 25%;
   }
@@ -124,9 +141,10 @@ footer {
     left: 24%;
   }
 }
-/* 모바일 호환은 개나줘버려라 TTㅣ발 */
 @media screen and (max-width: 420px) {
   .profile {
     left: 20%;
   }
-}
+} */
+
+/* 반응형으로 만들기 */

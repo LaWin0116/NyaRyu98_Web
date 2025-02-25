@@ -36,7 +36,7 @@ async function fetchLatestLongFormVideo(channelId) {
             const videoId = new URL(link).searchParams.get("v");
             document.getElementById("video").innerHTML = `
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
-                <a href="${link}" style="text-decoration: none; cursor: default;">
+                <a href="${link}">
                     <h3>${title}</h3>
                 </a>
             `;
