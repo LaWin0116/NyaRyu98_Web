@@ -18,6 +18,8 @@ async function fetchLatestLongFormVideo(channelId) {
 
     if (!data || !data.contents) {
         console.error("모든 프록시 요청이 실패했습니다.");
+        document.getElementById("video").innerHTML = `
+        <a href="../index.html">눌러서 새로고침</a>`
         return;
     }
 
@@ -44,7 +46,9 @@ async function fetchLatestLongFormVideo(channelId) {
         }
     }
 
-    document.getElementById("video").innerHTML = `<p>롱폼 동영상을 찾을 수 없습니다.</p>`;
+    document.getElementById("video").innerHTML = `
+    <p>롱폼 동영상을 찾을 수 없습니다.</p>
+    <a href="../index.html">눌러서 새로고침</a>`;
 }
 
 // 유튜브 채널 ID 설정 후 실행

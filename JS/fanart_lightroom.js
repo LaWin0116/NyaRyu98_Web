@@ -1,4 +1,3 @@
-// TODO: 라이트룸 형식으로 팬아트 볼 수 있게 만들기. 모을 팬아트 개수: 24~32
 let pics = document.querySelectorAll('.pic');
 let lightbox = document.querySelector('#lightbox');
 let lightboxImage = document.querySelector('#lightboxImage');
