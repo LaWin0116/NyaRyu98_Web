@@ -1,3 +1,90 @@
+:root {
+  /* main-color-1 ~ main-color-2 사이의 색상 모두 사용 가능 */
+  --main-color-1: #fef63d;
+  --main-color-2: #fec54a;
+  --main-color-3: #2f1520;
+  --sub-color-1: #25fef7;
+  --sub-color-2: #d81936;
+  --sub-color-3: #d6fe1e;
+  --bg-color-light:#fffeed;
+  --link-text-color: #921052;
+  --visited-text-color: #350a1f;
+}
+section > h2{
+  text-align: left;
+  font-size: xx-large;
+  margin-left: 1rem;
+}
+section > h3 {
+  font-size: x-large;
+  margin-left: 2rem;
+}
+section > p {
+  font-size: large;
+  font-weight: bolder;
+  margin-left: 2.5rem;
+}
+hr {
+  visibility: hidden;
+}
+
+/* 캐릭터 이미지 설정 */
+.gen-div-1 {
+  position: relative;
+  width: 10.6rem;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+  right: 30rem;
+  bottom: 4rem;
+}
+.gen-table {
+  border: 2px solid var(--main-color-3);
+  background: var(--main-color-2);
+  background: linear-gradient(180deg, var(--main-color-2), var(--main-color-1) 75%);
+}
+.gen-table h2 {
+  background: var(--main-color-2);
+  margin: 0;
+  font-size: medium;
+}
+.gen-img {
+  background: var(--main-color-2);
+  background: linear-gradient(180deg, var(--main-color-2), var(--main-color-1) 75%);
+  width: 10rem;
+  height: auto;
+}
+
+.gen-div-2 {
+  position: relative;
+  width: 10.6rem;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+  right: 19.4rem;
+  bottom: -3rem;
+}
+
+.gen-div-3 {
+  /* position: relative;
+  width: 10.6rem;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  float: right;
+  right: 30rem; */
+  bottom: -1rem;
+}
+
+/* 텍스트 설정 */
+.small-text {
+  font-size: x-small;
+  text-decoration: line-through;
+  color: #666;
+}
+
 /* 푸터 영역 */
 footer {
   padding: 60px 10%;
@@ -9,12 +96,12 @@ footer {
   align-items: start;
   gap: 30px;
 }
-.ppul-gul-boss {
+.ppul-gul-left {
   text-align: left;
 }
-.ppul-gul-TMI, .help {
+.ppul-gul-center, .help {
   text-align: center;
 }
-.introduce {
+.ppul-gul-right {
   text-align: right;
 }
