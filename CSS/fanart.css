@@ -94,10 +94,10 @@ section > h2, section > p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
   z-index: 1000;
   padding: 20px 0;
 }
-
 #lightboxImage {
   max-width: 90%;
   max-height: 80vh;
@@ -105,34 +105,22 @@ section > h2, section > p {
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  z-index: 1001;
 }
-body.lightroom-active {
-  pointer-events: none;
-  overflow: hidden;
-}
-body.lightroom-active #lightbox,
-body.lightroom-active #lightboxImage {
-  pointer-events: auto;
-}
-.pic:hover {
-  filter: brightness(1.5);
-}
-body.lightroom-active * {
-  cursor: default !important;
-}
+
 /* 이미지 설명 스타일 */
 #lightboxCaption {
   position: absolute;
-  bottom: 10%;
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 10px);
   color: white;
   font-size: 1.2rem;
   text-align: center;
-  background: rgba(0, 0, 0, 0);
-  padding: 10px 15px;
-  border-radius: 8px;
+  padding: 8px 12px;
+  border-radius: 5px;
   max-width: 80%;
+  white-space: nowrap;
 }
 
 .img-1 { grid-area: img-1; }

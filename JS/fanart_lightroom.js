@@ -17,8 +17,23 @@ for (let i = 0; i < pics.length; i++) {
 function showLightbox() {
     let bigLocation = this.dataset.src;
     let captionText = this.dataset.caption || ''; // 설명이 없으면 빈 문자열
+
     lightboxImage.src = bigLocation;
     lightboxCaption.textContent = captionText; // 설명 추가
+
+    // 이미지가 로드된 후 높이에 따라 캡션 위치 조정
+    lightboxImage.onload = function () {
+        let imgRect = lightboxImage.getBoundingClientRect();
+        let windowHeight = window.innerHeight;
+
+        // 이미지 아래에 캡션 배치
+        lightboxCaption.style.top = `${imgRect.bottom + 5}px`;
+
+        // // 이미지 크기가 작으면 약간 아래로 이동 (기본 중앙 위치에서 보정)
+        // let offset = Math.max(0, (windowHeight - imgRect.height) / 4);
+        // lightboxImage.style.transform = `translate(-50%, calc(-50% + ${offset}px))`;
+    };
+
     lightbox.style.display = 'block';
     document.body.classList.add('lightroom-active');
 }
