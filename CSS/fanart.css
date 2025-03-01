@@ -17,17 +17,56 @@ section > h2, section > p {
 
 /* 팬아트 */
 .row {
-  width: 420px;
+  /* width: 420px; */
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
   margin:0 auto;
 }
-.row ul {
-  list-style:none;
-  display: flex;
-  flex-wrap: wrap;
+
+/* 그리드 레이아웃으로 베치 */
+.gallery {
+  display: grid;
+  /* grid-template-columns: repeat(9, 75px); */
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  grid-template-rows: auto;
+  grid-template-areas:
+    "img-1 img-1 img-2 img-2 img-3 img-3 img-4 img-4 img-5"
+    "img-1 img-1 img-2 img-2 img-3 img-3 img-4 img-4 img-10"
+    "img-6 img-6 img-7 img-7 img-8 img-8 img-9 img-9 img-10"
+    "img-6 img-6 img-7 img-7 img-8 img-8 img-9 img-9 img-15"
+    "img-11 img-11 img-12 img-12 img-13 img-13 img-14 img-14 img-20"
+    "img-11 img-11 img-12 img-12 img-13 img-13 img-14 img-14 img-25"
+    "img-16 img-16 img-17 img-17 img-18 img-18 img-14 img-14 img-25"
+    "img-16 img-16 img-17 img-17 img-18 img-18 img-14 img-14 img-25"
+    "img-16 img-16 img-17 img-17 img-18 img-18 img-24 img-24 img-24"
+    "img-26 img-26 img-22 img-22 img-23 img-23 img-24 img-24 img-24"
+    "img-26 img-26 img-22 img-22 img-23 img-23 img-19 img-19 img-19"
+    "img-30 img-30 img-22 img-22 img-21 img-21 img-19 img-19 img-19"
+    "img-30 img-30 img-27 img-27 img-28 img-28 img-29 img-29 img-35"
+    "img-31 img-31 img-32 img-32 img-33 img-33 img-34 img-34 img-40"
+    "img-36 img-36 img-37 img-37 img-38 img-38 img-39 img-39 img-39"
+    "img-41 img-41 img-42 img-42 img-43 img-43 img-45 img-45 img-45"
+    "img-44 img-44 img-42 img-42 img-43 img-43 img-45 img-45 img-45"
+    "img-46 img-46 img-47 img-47 img-47 img-47 img-48 img-48 img-48"
+    "img-46 img-46 img-47 img-47 img-47 img-47 img-48 img-48 img-48";
+  gap: 5px;
+  /* width: 80%; */
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.pic {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* border-radius: 5px; */
 }
 
 /* 라이트 박스 스타일 */
-#lightbox {
+/* #lightbox {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -37,19 +76,42 @@ section > h2, section > p {
   display: none;
   z-index: 1000;
 }
-#lightbox img {
+#lightboxImage {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 5px solid #eee;
+} */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1000;
+  padding: 20px 0;
+}
+
+#lightboxImage {
+  max-width: 90%;
+  max-height: 80vh;
+  border: 5px solid #eee;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 body.lightroom-active {
   pointer-events: none;
   overflow: hidden;
 }
 body.lightroom-active #lightbox,
-body.lightroom-active #lightbox img {
+body.lightroom-active #lightboxImage {
   pointer-events: auto;
 }
 .pic:hover {
@@ -73,6 +135,56 @@ body.lightroom-active * {
   max-width: 80%;
 }
 
+.img-1 { grid-area: img-1; }
+.img-2 { grid-area: img-2; }
+.img-3 { grid-area: img-3; }
+.img-4 { grid-area: img-4; }
+.img-5 { grid-area: img-5; }
+.img-6 { grid-area: img-6; }
+.img-7 { grid-area: img-7; }
+.img-8 { grid-area: img-8; }
+.img-9 { grid-area: img-9; }
+.img-10 { grid-area: img-10; }
+.img-11 { grid-area: img-11; }
+.img-12 { grid-area: img-12; }
+.img-13 { grid-area: img-13; }
+.img-14 { grid-area: img-14; }
+.img-15 { grid-area: img-15; }
+.img-16 { grid-area: img-16; }
+.img-17 { grid-area: img-17; }
+.img-18 { grid-area: img-18; }
+.img-19 { grid-area: img-19; }
+.img-20 { grid-area: img-20; }
+.img-21 { grid-area: img-21; }
+.img-22 { grid-area: img-22; }
+.img-23 { grid-area: img-23; }
+.img-24 { grid-area: img-24; }
+.img-25 { grid-area: img-25; }
+.img-26 { grid-area: img-26; }
+.img-27 { grid-area: img-27; }
+.img-28 { grid-area: img-28; }
+.img-29 { grid-area: img-29; }
+.img-30 { grid-area: img-30; }
+.img-31 { grid-area: img-31; }
+.img-32 { grid-area: img-32; }
+.img-33 { grid-area: img-33; }
+.img-34 { grid-area: img-34; }
+.img-35 { grid-area: img-35; }
+.img-36 { grid-area: img-36; }
+.img-37 { grid-area: img-37; }
+.img-38 { grid-area: img-38; }
+.img-39 { grid-area: img-39; }
+.img-40 { grid-area: img-40; }
+.img-41 { grid-area: img-41; }
+.img-42 { grid-area: img-42; }
+.img-43 { grid-area: img-43; }
+.img-44 { grid-area: img-44; }
+.img-45 { grid-area: img-45; }
+.img-46 { grid-area: img-46; }
+.img-47 { grid-area: img-47; }
+.img-48 { grid-area: img-48; }
+
+
 /* 바로가기 */
 .link {
   display: flex;
@@ -83,6 +195,7 @@ body.lightroom-active * {
   width: 12rem;
   height: 12rem;
   text-align: center;
+  padding: 0 1rem;
 }
 .link img {
   width: 75%;

@@ -6,6 +6,9 @@ let lightboxImage = document.querySelector('#lightboxImage');
 let lightboxCaption = document.createElement('p');
 lightboxCaption.id = 'lightboxCaption';
 lightbox.appendChild(lightboxCaption);
+if (lightbox.style.display !== 'none') {
+    lightbox.style.display = 'none';
+}
 
 for (let i = 0; i < pics.length; i++) {
     pics[i].addEventListener('click', showLightbox);
