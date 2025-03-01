@@ -7,8 +7,15 @@
   --sub-color-2: #d81936;
   --sub-color-3: #d6fe1e;
   --bg-color-light:#fffeed;
-  --link-text-color: #921052;
-  --visited-text-color: #350a1f;
+  --bg-color-dark: #333;
+  --toggle-bg: #ccc;
+  --toggle-active-bg: #4CAF50;
+  --text-color-light: #000;
+  --text-color-dark: #fff;
+  --link-text-color-light: #921052;
+  --visited-text-color-light: #350a1f;
+  --link-text-color-dark: #ff7096;
+  --visited-text-color-dark: #ff94b0;
 }
 /* * {
 NOTE: 여기에 전체 설정 추가
@@ -21,18 +28,106 @@ body {
   flex-direction: column;
   /* justify-content: center; */
   /* align-items: center; */
+  color: var(--text-color-light);
+  transition: background 0.3s, color 0.3s;
 }
+/* 다크모드 스타일 */
+.dark-mode {
+  background: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+/* 배경색이 지정된 요소는 글자 색 유지 */
+.dark-mode .menu, .dark-mode header {
+  background: inherit;
+  color: var(--text-color-light);
+}
+/* 다크모드 토글 버튼 스타일 */
+/* .toggle-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+.toggle-input {
+  display: none;
+}
+.toggle-label {
+  width: 50px;
+  height: 25px;
+  background: var(--toggle-bg);
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.toggle-label::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: left 0.3s;
+}
+.toggle-input:checked + .toggle-label {
+  background: var(--toggle-active-bg);
+}
+.toggle-input:checked + .toggle-label::after {
+  left: 27px;
+} */
+.toggle-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-label {
+  width: 50px;
+  height: 25px;
+  background: var(--toggle-active-bg);
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: background 0.3s;
+  overflow: hidden;
+}
+
+.toggle-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
 a:link {
-  color: var(--link-text-color);
+  color: var(--link-text-color-light);
 }
 a:visited {
-  color: var(--visited-text-color);
+  color: var(--visited-text-color-light);
 }
 a:hover {
   color: var(--sub-color-1);
 }
 a:active {
   color: var(--sub-color-3);
+}
+.dark-mode a:link {
+  color: var(--link-text-color-dark);
+}
+.dark-mode a:visited {
+  color: var(--visited-text-color-dark);
 }
 
 /* 헤더 영역 */
@@ -43,6 +138,8 @@ header {
 .head-menu-div {
   background: linear-gradient(135deg, var(--main-color-2), var(--main-color-1));
   position: relative;
+  /* background-size: 200% 100%; */
+  transition: background-position 0.5s ease-in-out;
 }
 .main-ico img {
   width: 3em;
@@ -50,7 +147,7 @@ header {
 }
 .main-ico a {
   text-decoration: none;
-  color: #fff;
+  color: #fff !important;
 }
 .menu {
   width: 85%;
@@ -118,49 +215,43 @@ header {
 .text-a > a:hover::before {
   width: 185%;
 }
-
-/* 미디어 쿼리 */
-/* 난 반응형으로 만들기를 포기했다. */
-/* 모바일 호환은 개나줘버려라 TTㅣ발 */
-/* @media screen and (min-width: 1024px) and (max-width: 1027px) {
-  .menu {
-    width: 84%;
-  }
+/* 헤더 애니메이션 */
+/* .header-animate {
+  animation: slide-bg 0.5s ease;
 }
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .menu {
-    width: 83%;
+@keyframes slide-bg {
+  0% {
+      background-position: -100% 0;
   }
-}
-@media screen and (min-width: 702px) and (max-width: 769px) {
-  .menu {
-    width: 78%;
+  50% {
+      background-position: 0 0;
   }
-  .button {
-    margin: auto 4%;
-  }
-}
-@media screen and (max-width: 420px) {
-  .text-a {
-    width: 50px;
-  }
-  .image {
-    width: 49px;
-  }
-  .menu {
-    width: 50%;
-  }
-  .button {
-    padding: 5px 10px;
-    margin: auto 0.25%;
-    font-size: medium;
-    font-weight: normal;
-  }
-  .main-ico h1 {
-    font-size: large;
-    font-weight: 500;
-    width: 65px;
+  100% {
+      background-position: 100% 0;
   }
 } */
 
+.header-animate {
+  background-position: -100% 0;
+}
+
 /* 반응형으로 만들기 */
+/* 반응형 설정: 모든 화면에서 데스크탑과 동일한 구조 유지 */
+/* @media screen and (max-width: 1024px) {
+  body {
+      transform: scale(1);
+      width: 1024px;
+      overflow-x: auto;
+  }
+  .menu {
+      display: flex;
+      justify-content: space-between;
+  }
+  .button {
+      padding: 15px 30px;
+      font-size: x-large;
+  }
+  header {
+      padding: 20px;
+  }
+} */
