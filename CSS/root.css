@@ -190,7 +190,7 @@ header {
 
 .text-a > a {
   display: inline-flex;
-  color: #fff;
+  color: #fff !important;
   background-color: #0000;
   position: relative;
   overflow: hidden;
@@ -210,7 +210,7 @@ header {
   transition: width .75s;
 }
 .text-a > a:hover {
-  color: var(--main-color-2);
+  color: var(--main-color-2) !important;
 }
 .text-a > a:hover::before {
   width: 185%;
